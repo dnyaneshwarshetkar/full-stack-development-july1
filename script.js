@@ -123,7 +123,7 @@ while(num4<10){
 }
 
 console.log(num4);
-var num5 = 0
+var num5 = 0;
 do{
     console.log(num5);
     num5 = num5 + 1;
