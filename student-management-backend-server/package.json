@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "dnyaneshwar-shetkar-math-package": "^1.0.1",
     "express": "^4.19.2",
     "mongodb": "^6.8.0"

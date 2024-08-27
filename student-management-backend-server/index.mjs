@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { MongoClient, ObjectId } from "mongodb";
+import cors  from "cors"
 
 let url = "mongodb://localhost:27017";
 
@@ -14,6 +15,8 @@ let database = (async function connectToDBServer(){
 })();
 
 let app = express();
+
+app.use(cors())
 
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({extended:true}));
