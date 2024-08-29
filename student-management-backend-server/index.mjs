@@ -30,7 +30,7 @@ app.get("/", (req,res)=>{
 
 app.post("/students", async (req,res)=>{
     let db = await database;
-    let serverRespponse = await db.collection("students").insertOne(req.body);
+    let serverRespponse = await db.collection("students").insertOne(JSON.parse(req.body));
     console.log(serverRespponse);
     console.log(req.url, req.method, req.body, req.form);
     res.send(JSON.stringify({message: "Student Created Successfully"}));

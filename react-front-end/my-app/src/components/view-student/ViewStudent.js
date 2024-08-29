@@ -1,10 +1,18 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 export default function ViewStudent(){
-    let student = {
-        name: "John",
-        gender: "Male",
-        email: "john@gmail.com",
-        mobile: "+918923456789"
-    }
+    let params = useParams();
+    let [student, setStudent] = useState({})
+    useEffect(()=>{
+        console.log(params);
+        fetch(`http://localhost:3100/students/${params.studentId}`,{
+            method: "GET"
+        }).then(response=>{
+            response.json().then(studentData=>{
+                setStudent(studentData);
+            });
+        })
+    },[params.studentId]);
     return <>
     <h1>View Student</h1>
         <ul>
